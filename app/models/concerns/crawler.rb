@@ -1,4 +1,4 @@
-module Crawlable
+module Crawler
   extend ActiveSupport::Concern
 
   def crawl_from(url)

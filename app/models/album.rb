@@ -1,8 +1,10 @@
 class Album < ActiveRecord::Base
-  extend Crawlable # same code
-  extend Youtube # same code 
-  extend AlbumsHelper # same code
+  extend Crawler # Crawl = Get HTML source code
+  extend YoutubeParser
+  extend AlbumsHelper 
 
+  # Validation
+ 
   validates :title, presence: true,
                     uniqueness: true
   validates :artist, presence: true
@@ -11,6 +13,15 @@ class Album < ActiveRecord::Base
 
   # pure virtual function
   # must define input and output
+  
+  def get_albums(url)
+    # should return albums
+    # List of Hashes
+    
+    # must implement 
+    #   - custom site parser
+  end
+
   def parse_title
   end
 

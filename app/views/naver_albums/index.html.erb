@@ -5,6 +5,7 @@
         <p>ARTIST : <%= naver_album["artist"] %></p>
         <p>HASH : <%= naver_album["youtube_hash"] %></p>
         <p><a href="<%= get_youtube_watch_url naver_album["youtube_hash"] %>">watch</a></p>
+        <img src="<%= get_youtube_thumbnail naver_album["youtube_hash"] %>" alt="" />
         <iframe src="<%= get_youtube_embed_url naver_album["youtube_hash"] %>" frameborder="0"></iframe>
     </div>
     <% # it could be rendered with _album %>
