@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217032248) do
+ActiveRecord::Schema.define(version: 20140217071534) do
 
   create_table "albums", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20140217032248) do
     t.string   "title"
     t.string   "artist"
     t.string   "youtube_hash"
+  end
+
+  create_table "daum_albums", force: true do |t|
+    t.string   "title"
+    t.string   "artist"
+    t.string   "youtube_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "naver_albums", force: true do |t|

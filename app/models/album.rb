@@ -5,11 +5,12 @@ class Album < ActiveRecord::Base
 
   # Validation
  
-  validates :title, presence: true,
-                    uniqueness: true
+  validates :title, presence: true
   validates :artist, presence: true
   validates :youtube_hash, presence: true,
-                    uniqueness: true
+                            uniqueness: true
+
+  validates_uniqueness_of :title, scope: [:artist]
 
   # pure virtual function
   # must define input and output

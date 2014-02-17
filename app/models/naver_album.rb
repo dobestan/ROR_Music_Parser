@@ -1,4 +1,4 @@
-class NaverAlbum <  
+class NaverAlbum < Album
 
   # NaverAlbum has a [:titile, :artist, :youtube_hash]
   def self.get_albums(url)

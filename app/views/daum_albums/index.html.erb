@@ -1,0 +1,12 @@
+<h1>Daum Albums</h1>
+<% @daum_albums.each do |daum_album| %>
+    <div>
+        <p>TITLE : <%= daum_album["title"] %></p>
+        <p>ARTIST : <%= daum_album["artist"] %></p>
+        <p>HASH : <%= daum_album["youtube_hash"] %></p>
+        <p><a href="<%= get_youtube_watch_url daum_album["youtube_hash"] %>">watch</a></p>
+        <img src="<%= get_youtube_thumbnail daum_album["youtube_hash"] %>" alt="" />
+        <iframe src="<%= get_youtube_embed_url daum_album["youtube_hash"] %>" frameborder="0"></iframe>
+    </div>
+    <% # it could be rendered with _album %>
+<% end %>
