@@ -1,2 +1,11 @@
 <h1>Naver Albums</h1>
-<%= @naver_albums %>
+<% @naver_albums.each do |naver_album| %>
+    <div>
+        <p>TITLE : <%= naver_album["title"] %></p>
+        <p>ARTIST : <%= naver_album["artist"] %></p>
+        <p>HASH : <%= naver_album["youtube_hash"] %></p>
+        <p><a href="<%= get_youtube_watch_url naver_album["youtube_hash"] %>">watch</a></p>
+        <iframe src="<%= get_youtube_embed_url naver_album["youtube_hash"] %>" frameborder="0"></iframe>
+    </div>
+    <% # it could be rendered with _album %>
+<% end %>

@@ -11,6 +11,7 @@ module Youtube
 
       source = source.css('.result-list .yt-lockup')[0].css('.yt-lockup-thumbnail a')
 
+      albums[index]["youtube_hash"] = source[0]["href"][9..-1]
       albums[index]["youtube_url"] = get_youtube_watch_url source[0]['href'][9..-1]
       albums[index]["embed_url"] = get_youtube_embed_url source[0]['href'][9..-1]
 
